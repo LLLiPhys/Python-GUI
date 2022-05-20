@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'calculator.ui'
-#
-# Created by: PyQt5 UI code generator 5.9.2
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 from math import sqrt, cos, sin, tan
 
@@ -17,7 +9,6 @@ fontsize = 30
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        # MainWindow.resize(361, 588)
         MainWindow.resize(361, 658)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -189,7 +180,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         
     def remove_button(self):
-        # Grap the text from screen
+        # Grab the text from screen
         text = self.outputLabel.text()
         # Remove the last item
         text = text[:-1]        
@@ -204,13 +195,9 @@ class Ui_MainWindow(object):
     
     # Let's do some simple math
     def eqaul_button(self):
-        # Grap the text from screen
+        # Grab the text from screen
         text = self.outputLabel.text()
         try:
-            # if "rt" in text:
-            #     base, power = self.outputLabel.text().split("rt")
-            #     answer = eval(base) ** eval(power) # x**y
-            # else:
             answer = eval(text)
             self.outputLabel.setText(str(answer)) 
         except:
@@ -219,16 +206,15 @@ class Ui_MainWindow(object):
             
     # Add a decimal after number
     def decimal_button(self):
-        # Grap the entire text
+        # Grab the entire text
         text = self.outputLabel.text()
-        # Check if the last item is a dot 
+        # Check the last item
         if text[-1] == ".":
             pass
         else:
             self.outputLabel.setText(f"{text}.")
     
     def press_button(self, pressed):
-        # self.outputLabel.setText(pressed)
         left_parethesis = r"("
         right_parethesis = r")"
         double_star = r"**"
